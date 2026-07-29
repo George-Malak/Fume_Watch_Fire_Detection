@@ -101,7 +101,6 @@ elif app_mode == "Test Video":
             else:
                 st.error("An error occurred while processing the video.")
 # 6. Footer
-st.markdown("---")
 st.markdown(
     """
     <style>
@@ -121,9 +120,9 @@ st.markdown(
         <hr style="margin-bottom: 10px; border-top: 1px solid #ccc;">
         <p style="margin: 0;">Developed with ❤️ by <b>George Malak</b> | FumeWatch AI System</p>
         <p style="margin: 5px 0 0 0;">
-            <a href="mailto:georgmalak2004@gmail.com" target="_blank" style="margin: 0 10px; text-decoration: none;">📧 Email</a> |
-            <a href="https://www.linkedin.com/in/george-malak/" target="_blank" style="margin: 0 10px; text-decoration: none;">💼 LinkedIn</a> |
-            <a href="https://github.com/George-Malak" target="_blank" style="margin: 0 10px; text-decoration: none;">🐙 GitHub</a>
+            <a href="mailto:georgmalak2004@gmail.com" target="_blank" style="margin: 0 10px; text-decoration: none;">Email</a> |
+            <a href="https://www.linkedin.com/in/george-malak/" target="_blank" style="margin: 0 10px; text-decoration: none;">LinkedIn</a> |
+            <a href="https://github.com/George-Malak" target="_blank" style="margin: 0 10px; text-decoration: none;">GitHub</a>
         </p>
     </div>
     """,
