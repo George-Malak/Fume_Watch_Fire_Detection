@@ -6,7 +6,7 @@
 [![OpenCV](https://img.shields.io/badge/OpenCV-4.8+-5C3EE8.svg)](https://opencv.org/)
 [![Debian Trixie](https://img.shields.io/badge/Streamlit_Cloud-Debian_Trixie-0055A5.svg)](https://share.streamlit.io/)
 
-**FumeWatch** is an AI-powered computer vision application designed for early detection of smoke and fire hazards. Built using **YOLOv8**, **OpenCV**, and **Streamlit**, it provides an intuitive web interface for uploading images and processing video streams to detect environmental threats instantly with web-compatible video encoding (H.264).
+**FumeWatch** is an AI-powered computer vision application designed for early detection of smoke and fire hazards. Built using **YOLOv8**, **OpenCV**, and **Streamlit**, it provides an intuitive web interface for uploading images and processing video streams to detect environmental threats instantly with web-compatible video encoding (MP4).
 
 ---
 
