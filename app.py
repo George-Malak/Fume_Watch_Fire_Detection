@@ -59,7 +59,7 @@ if app_mode == "Test Image":
 
 # 5. Test Video Mode 
 elif app_mode == "Test Video":
-    st.subheader("🎥 Detection on Video Clips")
+    st.subheader("Detection on Video Clips")
     uploaded_video = st.file_uploader("Upload a video for testing...", type=["mp4", "avi", "mov", "mkv"])
 
     if uploaded_video is not None and model is not None:
