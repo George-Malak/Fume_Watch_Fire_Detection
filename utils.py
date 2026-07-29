@@ -38,7 +38,7 @@ class FumeWatchProcessor:
 
     def process_video(self, video_path, output_path, model, conf_threshold=0.25):
         """
-        Read Frame -> Preprocess -> Predict -> Write
+        Read Frame -> Preprocess -> Predict -> Write --> Save Video 
         """
         cap = cv2.VideoCapture(video_path)
         if not cap.isOpened():
@@ -52,7 +52,7 @@ class FumeWatchProcessor:
             fps = 30
 
         # resize to target size
-        fourcc = cv2.VideoWriter_fourcc(*"H264")
+        fourcc = cv2.VideoWriter_fourcc(*"mp4v")
         out = cv2.VideoWriter(output_path, fourcc, fps, (out_w, out_h))
 
         while cap.isOpened():

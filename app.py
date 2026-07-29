@@ -47,7 +47,7 @@ if app_mode == "Test Image":
         col1, col2 = st.columns(2)
 
         with col1:
-            st.info("Original Uploaded Image")
+            st.info("Original  Image")
             st.image(image_np, channels="BGR", use_container_width=True)
 
         with col2:
@@ -74,7 +74,7 @@ elif app_mode == "Test Video":
 
         # 1.to process the video and display results
         if st.button("Start Video Processing"):
-            with st.spinner("Processing video frames... This may take a few seconds."):
+            with st.spinner("Processing video frames..."):
                 success = processor.process_video(
                     video_path=tfile.name,
                     output_path=output_video_path,
@@ -89,7 +89,7 @@ elif app_mode == "Test Video":
                 col1, col2 = st.columns(2)
                 
                 with col1:
-                    st.info("Original Uploaded Video")
+                    st.info("Original  Video")
                     st.video(tfile.name)
                     
                 with col2:
