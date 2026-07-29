@@ -55,7 +55,7 @@ class FumeWatchProcessor:
         temp_raw = "temp_raw_video.mp4"
         # resize to target size
         fourcc = cv2.VideoWriter_fourcc(*"mp4")
-        out = cv2.VideoWriter(temp_raw, fourcc, fps, (out_w, out_h))
+        out = cv2.VideoWriter(temp_raw, fourcc, fps, (out_w, out_h), isColor=True)
 
         while cap.isOpened():
             ret, frame = cap.read()
