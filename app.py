@@ -34,23 +34,6 @@ conf_threshold = st.sidebar.slider(
 
 app_mode = st.sidebar.radio("Choose Operation Mode:", ["Test Image", "Test Video"])
 
-st.markdown("---")
-st.markdown(
-    """
-    <footer>
-        <div style="text-align: center; color: #777;">
-            <p>Developed with ❤️ by <b>George Malak</b> | FumeWatch AI System</p>
-            <p>
-                <a href="mailto:georgmalak2004@gmail.com" target="_blank" style="margin: 0 10px; text-decoration: none;">📧 Email</a> |
-                <a href="https://www.linkedin.com/in/george-malak/" target="_blank" style="margin: 0 10px; text-decoration: none;">💼 LinkedIn</a> |
-                <a href="https://github.com/George-Malak" target="_blank" style="margin: 0 10px; text-decoration: none;">🐙 GitHub</a>
-            </p>
-        </div>
-    </footer>
-    """,
-    unsafe_allow_html=unsafe_allow_html_status if 'unsafe_allow_html_status' in locals() else True
-)
-
 # 4. Test Image Mode
 if app_mode == "Test Image":
     st.subheader("Detection on Images")
@@ -117,3 +100,32 @@ elif app_mode == "Test Video":
                     st.video(video_bytes)
             else:
                 st.error("An error occurred while processing the video.")
+# 6. Footer
+st.markdown("---")
+st.markdown(
+    """
+    <style>
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: transparent;
+        color: #777;
+        text-align: center;
+        padding: 10px 0;
+        z-index: 100;
+    }
+    </style>
+    <div class="footer">
+        <hr style="margin-bottom: 10px; border-top: 1px solid #ccc;">
+        <p style="margin: 0;">Developed with ❤️ by <b>George Malak</b> | FumeWatch AI System</p>
+        <p style="margin: 5px 0 0 0;">
+            <a href="mailto:georgmalak2004@gmail.com" target="_blank" style="margin: 0 10px; text-decoration: none;">📧 Email</a> |
+            <a href="https://www.linkedin.com/in/george-malak/" target="_blank" style="margin: 0 10px; text-decoration: none;">💼 LinkedIn</a> |
+            <a href="https://github.com/George-Malak" target="_blank" style="margin: 0 10px; text-decoration: none;">🐙 GitHub</a>
+        </p>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
