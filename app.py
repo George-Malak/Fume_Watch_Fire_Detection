@@ -11,7 +11,6 @@ from utils import FumeWatchProcessor
 # 1. set page config 
 st.set_page_config(
     page_title="FumeWatch - Smoke & Fire Detection",
-    page_icon="🔥",
     layout="wide",
     initial_sidebar_state="expanded"
 )

@@ -1,1 +1,6 @@
-*.pt
+*.png
+*.jpg
+*.jpeg
+*.csv
+*.yaml
+*.yml
