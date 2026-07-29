@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+import subprocess
 import os
 
 class FumeWatchProcessor:
@@ -51,9 +52,10 @@ class FumeWatchProcessor:
         if fps == 0:
             fps = 30
 
+        temp_raw = "temp_raw_video.mp4"
         # resize to target size
         fourcc = cv2.VideoWriter_fourcc(*"mp4")
-        out = cv2.VideoWriter(output_path, fourcc, fps, (out_w, out_h))
+        out = cv2.VideoWriter(temp_raw, fourcc, fps, (out_w, out_h))
 
         while cap.isOpened():
             ret, frame = cap.read()
@@ -76,7 +78,28 @@ class FumeWatchProcessor:
 
         cap.release()
         out.release()
-        return True
+        try:
+            subprocess.run(
+                [
+                    "ffmpeg",
+                    "-y",
+                    "-i",
+                    temp_raw,
+                    "-vcodec",
+                    "libx264",
+                    output_path,
+                ],
+                check=True,
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+            )
+
+            if os.path.exists(temp_raw):
+                os.remove(temp_raw)
+            return True
+        except subprocess.CalledProcessError as e:
+            print(f"Error during ffmpeg processing: {e}")
+            return False
 
     def show_box(self, image_input, label_data, is_model=False):
         """
