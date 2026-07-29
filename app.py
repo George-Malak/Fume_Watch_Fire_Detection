@@ -59,7 +59,7 @@ if app_mode == "Test Image":
 
 # 5. Test Video Mode 
 elif app_mode == "Test Video":
-    st.subheader("Detection on Video Clips")
+    st.subheader("🎥 Detection on Video Clips")
     uploaded_video = st.file_uploader("Upload a video for testing...", type=["mp4", "avi", "mov", "mkv"])
 
     if uploaded_video is not None and model is not None:
@@ -72,8 +72,9 @@ elif app_mode == "Test Video":
         
         output_video_path = "output_processed_video.mp4"
 
-        if st.button("Start Video annotation"):
-            with st.spinner("Processing video frames... This may take a few seconds/minutes depending on the video size."):
+        # 1.to process the video and display results
+        if st.button("Start Video Processing"):
+            with st.spinner("Processing video frames... This may take a few seconds."):
                 success = processor.process_video(
                     video_path=tfile.name,
                     output_path=output_video_path,
@@ -83,12 +84,19 @@ elif app_mode == "Test Video":
 
             if success and os.path.exists(output_video_path):
                 st.success("✓ Video processing completed successfully!")
-                st.video(output_video_path)
+                
+                # 2. display original and processed video side by side
+                col1, col2 = st.columns(2)
+                
+                with col1:
+                    st.info("Original Uploaded Video")
+                    st.video(tfile.name)
+                    
+                with col2:
+                    st.info("Detection Results")
+                    # Read the video as bytes to ensure it plays within the browser
+                    with open(output_video_path, 'rb') as v_file:
+                        video_bytes = v_file.read()
+                    st.video(video_bytes)
             else:
                 st.error("An error occurred while processing the video.")
-
-        # Clear the temporary file after completion
-        try:
-            os.remove(tfile.name)
-        except Exception:
-            pass

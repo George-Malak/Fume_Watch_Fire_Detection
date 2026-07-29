@@ -52,7 +52,7 @@ class FumeWatchProcessor:
             fps = 30
 
         # resize to target size
-        fourcc = cv2.VideoWriter_fourcc(*"mp4v")
+        fourcc = cv2.VideoWriter_fourcc(*"H264")
         out = cv2.VideoWriter(output_path, fourcc, fps, (out_w, out_h))
 
         while cap.isOpened():
