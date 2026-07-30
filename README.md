@@ -48,3 +48,8 @@ FumeWatch/
 ├── requirements.txt           # Python dependencies
 ├── .gitignore
 └── README.md
+```
+
+If U want to Know more about [FumWatch Report](Docs/Report_FumWatch.pdf)
+
+Use My application [FumeWatch](https://fumwatch-fire-smoke-detection-george-malak.streamlit.app/#fume-watch-system)
